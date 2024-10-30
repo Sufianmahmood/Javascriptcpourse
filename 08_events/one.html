@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Event_01</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h2>Amazing Image</h2>
+    <ul id="images">
+        <li><img  width="200px" id="photoshop" src="https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></li>
+        
+        <li><img  width="200px" id="photoshop1" src="https://images.pexels.com/photos/326212/pexels-photo-326212.jpeg?auto=compress&cs=tinysrgb&w=400"></li>
+
+        <li><img  width="200px" id="photoshop2" src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=400"></li>
+
+        <li><img  width="200px" id="photoshop3" src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=400"></li>
+          
+        <li><a style="color: aliceblue;"  href="https://www.google.co.in/" id="google">google</a></li>
+    </ul>
+</body>
+ <script>
+
+    //attachEvent()
+//jQuery - on
+ //document.getElementById('photoshop').onclick = function(){
+ //  alert("1st image has been selected")
+ //}
+
+ // document.getElementById('photoshop1').addEventListener('click', //function(e){
+ //   console.log(e);
+ //   },false)
+// type, timestamp, defaultPrevented
+// target, toElement, srcElement, currntTargets
+//clientX, clientY, ScreenX, screenY
+//altKey, ctrlKey,shiftkey , keycode
+
+
+//document.getElementById('images').addEventListener('click', function(e){
+//    console.log("clicked inside ul");
+//   
+//    },false)
+//    
+//  document.getElementById('photoshop3').addEventListener('click', //function(e){
+//   
+//    e.stopPropagation()
+//    console.log("picture4 got selected");
+//    },false)
+//     document.getElementById('google').addEventListener('click', //function(e){
+//   
+//    e.preventDefault();
+//    e.stopPropagation
+//    console.log("google  got selected");
+//    },false)
+
+document.querySelector('#images').addEventListener('click', function (e) {
+    console.log(e.target.parentNode);
+    if (e.target.tagName == 'IMG') {
+        console.log(e.target.id);
+        
+        const removeIt = e.target.parentNode //let or const both can be use
+   removeIt.remove()
+    }
+
+    
+  // removeIt.parentNode.removeChild(removeIt)
+},false)
+
+</script>
+</html>
