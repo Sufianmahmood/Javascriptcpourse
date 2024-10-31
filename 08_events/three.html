@@ -15,19 +15,23 @@
    //     console.log("Welcome!!!", Date.now());
    //     
    //},1000)
-   const sayDate = function(str){
-    console.log(str, Date.now());
-    }
-  //const intervalId =  setInterval(sayDate, 1000, "hi")
+    const sayDate = function(str){
+     console.log(str, Date.now());
+     }
 
-  document.querySelector('#start').addEventListener('click', function(){
-    var intervalId =  setInterval(sayDate, 1000, "hi")
-    console.log(intervalId);
+     let intervalId;
     
-  })
 
-  document.querySelector('#stop').addEventListener('click', function(){
-    clearInterval(intervalId)
-  })
+  const start = function(){
+    intervalId =  setInterval(sayDate, 1000, "hi")
+    console.log(intervalId);
+ }
+   const stop = function(){
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+
+  document.querySelector('#start').addEventListener('click', start)
+  document.querySelector('#stop').addEventListener('click', stop)
  </script>
 </html>
